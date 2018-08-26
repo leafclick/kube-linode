@@ -7,6 +7,8 @@ PRIVATE_IP=$(ip addr show eth0 | grep "inet\b" | grep "/17" | awk '{print $2}' |
 
 wget --quiet --no-check-certificate https://github.com/coreos/container-linux-config-transpiler/releases/download/v0.5.0/ct-v0.5.0-x86_64-unknown-linux-gnu -O ct
 chmod +x ct
+apt-get update
+apt-get -y dist-upgrade
 apt-get -y install gawk
 wget --quiet https://raw.githubusercontent.com/coreos/init/master/bin/coreos-install
 chmod u+x coreos-install
